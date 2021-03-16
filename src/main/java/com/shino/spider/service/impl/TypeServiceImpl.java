@@ -34,6 +34,7 @@ public class TypeServiceImpl extends ServiceImpl<TypeMapper, HotType> implements
 
     @Override
     public void addType(HotType hotType) {
+        hotType.setIsDel((byte) 1);
         typeService.save(hotType);
     }
 

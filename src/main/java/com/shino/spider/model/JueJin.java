@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jsoup.nodes.Element;
 
 import java.io.Serializable;
 
@@ -16,18 +17,22 @@ import java.io.Serializable;
  * @date 2021/3/16
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@TableName("hot_type")
+@NoArgsConstructor
 @Builder
-public class HotType implements Serializable {
+@TableName("juejin")
+public class JueJin implements Serializable {
     private static final long serialVersionUID = 1L;
-    @TableId(value = "type_id",type = IdType.AUTO)
-    private int typeId;
-    @TableField("source_name")
-    private String sourceName;
-    @TableField("description")
-    private String description;
-    @TableField("is_del")
-    private Byte isDel;
+    @TableId(value = "id",type = IdType.AUTO)
+    private Integer id;
+    @TableField("title")
+    private String title;
+    @TableField("link")
+    private String link;
+    @TableField("time")
+    private Long time;
+    @TableField("view")
+    private Integer view;
+    @TableField("content")
+    private String content;
 }
